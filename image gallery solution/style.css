@@ -1,0 +1,37 @@
+img {
+    width: 30%;
+    margin: calc(9%/6);
+
+    /** grayscale */
+    filter: gray;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+
+    /** transition: element name, time, functions */
+    transition: filter 1.5s ease, transform 1s ease;
+}
+
+img:hover {
+    -webkit-filter: grayscale(0);
+    filter: none;
+
+    /*! transition: transform 1s ease; */
+    /** transform */
+    transform: scale(1.1);
+}
+
+nav {
+    /** spaces */
+    width: 30%;
+    margin-left: calc(9%/6);
+    margin-bottom: 0.5rem;
+    padding: 1.5rem 0;
+
+    letter-spacing: 0.4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+
+    /** HR */
+    border-bottom: 2px solid gray;
+}
