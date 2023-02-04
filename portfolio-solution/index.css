@@ -1,0 +1,290 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: rgb(228, 249, 245);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main-container {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image-container {
+    width: 100%;
+}
+
+.image-container:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 2rem;
+}
+
+.title-text {
+    font-family: 'Sacramento', serif;
+    font-weight: 400;
+    font-weight: bold;
+    font-size: 6rem;
+    color: rgb(102, 191, 191);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.subtitle-text,
+.about-title,
+.skill-title {
+    font-family: 'Montserrat', serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    color: rgb(102, 191, 191);
+    text-align: center;
+}
+
+.mountain-image img {
+    max-width: 100%;
+}
+
+.about-section {
+    background-color: white;
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.about-container {
+    width: 30%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.about-container img {
+    max-width: 18rem;
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
+.about-subtitle {
+    font-family: Merriweather;
+    text-align: center;
+    line-height: 2rem;
+}
+
+hr {
+    border: 6px dotted gray;
+    border-top: none;
+    width: 2rem;
+    margin-top: 5rem;
+}
+
+.skill-section {
+    background-color: white;
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.skill-container {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-image img {
+    max-width: 12rem;
+}
+
+.card-body {
+    padding: 0 2rem;
+}
+
+.card-subtitle {
+    margin-top: 1.5rem;
+}
+
+.card-title {
+    font-family: 'Montserrat', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgb(102, 191, 191);
+}
+
+.card-subtitle {
+    font-family: 'Merriweather', sans-serif;
+    line-height: 2rem;
+}
+
+.contact-title {
+    font-family: 'Montserrat', serif;
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(102, 191, 191);
+    margin: 2rem 0;
+}
+
+.contact-subtitle {
+    font-family: 'Montserrat', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgb(102, 191, 191);
+    margin: 1rem 0;
+}
+
+.contact-text {
+    font-family: 'Merriweather', sans-serif;
+    line-height: 2rem;
+    margin: 0.7rem 0;
+}
+
+.contact-button {
+    background-color: rgb(37, 138, 188);
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 1.7rem;
+    font-family: 'Montserrat', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    padding: 0.5rem 1rem;
+    margin: 0 0 3rem 0;
+    background: linear-gradient(rgb(17, 204, 212), rgb(40, 133, 187));
+}
+
+.contact-button:hover {
+    background-color: #6EBDF0;
+}
+
+footer {
+    background-color: #F1EEEE;
+    padding: 5rem 0;
+}
+
+footer a {
+    font-family: 'Merriweather', sans-serif;
+    color: black;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+footer i {
+    font-size: 1.5rem;
+}
+
+footer div {
+    font-family: 'Merriweather', sans-serif;
+    margin-top: 2rem;
+}
+
+#cloud {
+    padding-top: 1rem;
+}
+
+
+
+@keyframes myAnimation {
+    0% {
+        opacity: 0;
+        transform: rotateX(-20deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+.main-container {
+    /* * transition: name, time, function */
+    /* * animation: name, time, function */
+    animation: myAnimation 1s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1000px) {
+    .about-container {
+        width: 60%;
+    }
+
+    .about-container img {
+        margin-top: 2rem;
+        max-width: 12rem;
+    }
+
+    .main-container .title-text {
+        font-size: 5rem;
+    }
+
+    #cloud {
+        padding-top: 2rem;
+    }
+
+    .about-section .about-title {
+        margin: 2rem 0;
+    }
+
+    .skill-section {
+        margin-top: 3rem;
+    }
+
+    .skill-section .skill-title {
+        margin-bottom: 2rem;
+    }
+
+    .skill-card {
+        display: block;
+        margin: 2rem 0;
+    }
+
+    .skill-card .card-image {
+        margin-bottom: 2rem;
+    }
+
+    .skill-section .skill-container {
+        width: 70%;
+        text-align: center;
+    }
+
+}
