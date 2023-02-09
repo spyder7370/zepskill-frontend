@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/** NAVBAR */
+
+.navbar {
+    background-color: black;
+    padding: 1rem;
+}
+
+.navbar .navbar-brand img {
+    width: 12rem;
+}
+
+.navbar .nav-item .nav-link {
+    color: white;
+    margin: 0 0.4rem;
+}
+
+.navbar .nav-item .nav-link:hover {
+    color: red;
+}
+
+/*! NAVBAR */
+
+
+.banner {
+    position: relative;
+}
+
+.banner img {
+    max-width: 100%;
+}
+
+.banner .btn-danger {
+    position: absolute;
+    left: 5rem;
+    bottom: 4rem;
+}
+
+.banner .btn-dark {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    padding: 0.7rem 1rem;
+}
