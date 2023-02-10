@@ -4,9 +4,15 @@ body {
     box-sizing: border-box;
 }
 
+.fixed-button {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    padding: 0.7rem 1rem;
+    z-index: 10;
+}
 
 /** NAVBAR */
-
 .navbar {
     background-color: black;
     padding: 1rem;
@@ -27,7 +33,7 @@ body {
 
 /*! NAVBAR */
 
-
+/* * MAIN BANNER */
 .banner {
     position: relative;
 }
@@ -42,9 +48,72 @@ body {
     bottom: 4rem;
 }
 
-.banner .btn-dark {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    padding: 0.7rem 1rem;
+/* ! MAIN BANNER */
+
+
+/* * MAIN SLIDESHOW */
+.main-slideshow .carousel-item {
+    position: relative;
 }
+
+.main-slideshow .carousel-item .main-slideshow-firstBtn {
+    position: absolute;
+    bottom: 4rem;
+    left: 5rem;
+}
+
+.main-slideshow .carousel-item .main-slideshow-secondBtn {
+    position: absolute;
+    bottom: 4rem;
+    right: 20rem;
+}
+
+/* ! MAIN SLIDESHOW */
+
+/* * SHOWCASE SECTION */
+
+.showcase .row {
+    overflow: hidden;
+}
+
+.showcase .row .col-3 {
+    height: 13rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* *must be a numerical value in order to use transition */
+    background-size: 100%;
+    /* !background-size: cover; */
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    transition: background-size 1s ease;
+}
+
+.showcase .row .col-3:hover {
+    background-size: 110%;
+}
+
+.showcase .showcase-subtitle {
+    color: white;
+    font-weight: bold;
+    padding: 1rem 1.8rem;
+}
+
+/*! SHOWCASE SECTION */
+
+/* *MOTORCYCLE NAVBAR */
+.motorcycle-nav .navbar-brand {
+    font-weight: bold;
+}
+
+.motorcycle-nav .nav-item {
+    border-right: 3px solid white;
+    line-height: 1px;
+    padding: 0 1rem;
+}
+
+.motorcycle-nav .nav-item:last-child {
+    border-right: none;
+}
+
+/*! MOTORCYCLE NAVBAR */

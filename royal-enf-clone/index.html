@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- custom stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -64,20 +66,125 @@
         </div>
     </nav>
 
+    <button class="btn btn-dark fixed-button"><i class="fa-solid fa-share-nodes"></i></button>
 
     <main class="banner">
         <img src="https://www.royalenfield.com/content/dam/royal-enfield/super-meteor-650/motorcycles/home/banners/desktop/l1.jpg"
             alt="">
         <button class="btn btn-danger">Explore ></button>
-        <button class="btn btn-dark"><i class="fa-solid fa-share-nodes"></i></button>
     </main>
 
 
+    <section class="main-slideshow">
+        <div id="main-slideshow-container" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.royalenfield.com/content/dam/royal-enfield/india/home/banner/desktop/royal-enfield-imoty.jpg"
+                        class="d-block w-100" alt="...">
+                    <button class="btn btn-danger main-slideshow-firstBtn">Explore ></button>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.royalenfield.com/content/dam/royal-enfield/india/gtcup-2022/gt-cup-home.png"
+                        class="d-block w-100" alt="...">
+                    <button class="btn btn-danger main-slideshow-secondBtn">Explore ></button>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#main-slideshow-container"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#main-slideshow-container"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="showcase">
+        <div class="row m-0 p-0">
+            <div class="col-3 p-0"
+                style="background-image: url('https://www.royalenfield.com/content/dam/royal-enfield/india/home/tout/overdrive.jpg');">
+                <div class="showcase-subtitle">
+                    The Hunter 350 is a motorcycle that keeps things simple, fun and
+                    engaging...
+                </div>
+            </div>
+            <div class="col-3 p-0"
+                style="background-image: url('https://www.royalenfield.com/content/dam/royal-enfield/india/home/tout/moto.jpg');">
+                <div class="showcase-subtitle">
+                    Democratic like jeans, the Hunter 350 is perfect for those who want an
+                    easy.....
+                </div>
+            </div>
+            <div class="col-3 p-0"
+                style="background-image: url('https://www.royalenfield.com/content/dam/royal-enfield/india/home/tout/meets-the-expectations.jpg');">
+            </div>
+            <div class="col-3 p-0"
+                style="background-image: url('https://www.royalenfield.com/content/dam/royal-enfield/india/home/tout/build-to-be-slick.jpg');">
+            </div>
+        </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg navbar-dark motorcycle-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Motorcyles</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 carousel-indicators">
+                    <li class="nav-item">
+                        <a class="nav-link" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="0" aria-current="true" aria-label="Slide 1">SuperMeteor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="1" aria-label="Slide 2">Hunter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Scram</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Classic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.royalenfield.com/content/dam/royal-enfield/super-meteor-650/motorcycles/home/motorcycle/desktop/super-meteor-650.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.royalenfield.com/content/dam/royal-enfield/hunter-350/home/motorcycle/hunter-350-motorcycle-home.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
 
 
-
-
+    <!-- icons -->
     <script src="https://kit.fontawesome.com/207159304a.js" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
