@@ -215,3 +215,228 @@ body {
 }
 
 /* ! GRID CAROUSEL */
+
+/** ICON FOOTER */
+
+.icon-footer i {
+    display: block;
+    font-size: 3rem;
+}
+
+.icon-footer .col-3 {
+    text-align: center;
+    color: rgb(181, 178, 179);
+    font-size: 1.1rem;
+}
+
+.icon-footer span:hover {
+    color: red;
+}
+
+/*! ICON FOOTER */
+
+/* * MEDIA FOOTER */
+.media-footer {
+    background-color: rgb(228, 227, 226);
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    font-size: 1.1rem;
+}
+
+.media-footer i {
+    font-size: 1.7rem;
+    margin: 0 0.7rem;
+}
+
+.media-footer .fa-square-facebook:hover {
+    color: slateblue;
+}
+
+.media-footer .fa-twitter:hover {
+    color: #22cbff;
+}
+
+.media-footer .fa-youtube:hover {
+    color: red;
+}
+
+.media-footer .fa-square-instagram:hover {
+    color: slateblue;
+}
+
+/* ! MEDIA FOOTER */
+
+
+/* * MAIN FOOTER */
+.main-footer,
+.hr-row {
+    background-color: rgb(228, 227, 226);
+}
+
+.main-footer .column {
+    width: 12%;
+}
+
+.main-footer .container-fluid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.main-footer .column div {
+    margin: 0.3rem 0;
+}
+
+.main-footer .column div:hover {
+    color: red;
+}
+
+.main-footer .column div:first-child {
+    margin: 0.6rem 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.main-footer .column div:first-child:hover {
+    color: black;
+}
+
+/* !MAIN FOOTER */
+
+
+/* *MEDIA QUERIES - RESPONSIVE */
+@media (max-width: 1250px) {
+    .showcase .showcase-subtitle {
+        color: white;
+        font-weight: bold;
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .showcase .row .col-3 {
+        height: 11rem;
+    }
+}
+
+@media (max-width: 1050px) {
+    .main-slideshow .carousel-item .main-slideshow-secondBtn {
+        position: absolute;
+        bottom: 4rem;
+        right: 5rem;
+    }
+
+    .showcase .row .col-3 {
+        height: 9rem;
+    }
+
+    #motorcycle-carousel .carousel-item.first-slide .btn-danger {
+        position: absolute;
+        top: 60%;
+        right: 21rem;
+    }
+
+    #motorcycle-carousel .carousel-item.first-slide .first-slide-text-image {
+        position: absolute;
+        top: 30%;
+        right: 10rem;
+        width: 17rem;
+    }
+
+    .grid-carousel .carousel-item {
+        height: 15rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .grid-carousel .grid-carousel-subtitle {
+        position: absolute;
+        top: 45%;
+        right: 30%;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        z-index: 5;
+    }
+}
+
+@media (max-width: 750px) {
+    .banner .btn-danger {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+    }
+
+    .main-slideshow .carousel-item .main-slideshow-secondBtn {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .main-slideshow .carousel-item .main-slideshow-firstBtn {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    .showcase .row .col-3 {
+        height: 7rem;
+    }
+
+    #motorcycle-carousel .carousel-item.first-slide .btn-danger {
+        position: absolute;
+        top: 60%;
+        right: 21rem;
+    }
+
+    #motorcycle-carousel .carousel-item.first-slide .first-slide-text-image {
+        position: absolute;
+        top: 20%;
+        right: 10rem;
+        width: 17rem;
+    }
+
+    #motorcycle-carousel .carousel-item.second-slide .btn-outline-light {
+        position: absolute;
+        top: 50%;
+        left: 2rem;
+    }
+
+    #rides-carousel .first-slide .first-slide-text {
+        position: absolute;
+        top: 40%;
+        right: 12rem;
+        font-weight: bold;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    #rides-carousel .first-slide .btn-danger {
+        position: absolute;
+        top: 60%;
+        right: 15rem;
+    }
+
+    .grid-carousel .carousel-item {
+        height: 10rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .grid-carousel .grid-carousel-subtitle {
+        position: absolute;
+        top: 45%;
+        right: 30%;
+        color: white;
+        font-weight: bold;
+        font-size: 0.7rem;
+        z-index: 5;
+    }
+
+    .main-footer .column {
+        width: 50%;
+    }
+}
