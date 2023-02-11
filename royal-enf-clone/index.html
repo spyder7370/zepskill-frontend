@@ -127,7 +127,7 @@
         </div>
     </section>
 
-    <nav class="navbar navbar-expand-lg navbar-dark motorcycle-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark motorcycle-nav sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Motorcyles</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -136,20 +136,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 carousel-indicators">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide-to="0" aria-current="true" aria-label="Slide 1">SuperMeteor</a>
+                        <a class="nav-link" type="button" data-bs-target="#motorcycle-carousel" data-bs-slide-to="0"
+                            aria-current="true" aria-label="Slide 1">SuperMeteor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide-to="1" aria-label="Slide 2">Hunter</a>
+                        <a class="nav-link" type="button" data-bs-target="#motorcycle-carousel" data-bs-slide-to="1"
+                            aria-label="Slide 2">Hunter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Scram</a>
+                        <a class="nav-link" type="button" data-bs-target="#motorcycle-carousel" data-bs-slide-to="2"
+                            aria-label="Slide 3">Scram</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Classic</a>
+                        <a class="nav-link" type="button" data-bs-target="#motorcycle-carousel" data-bs-slide-to="3"
+                            aria-label="Slide 4">Classic</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">Home</a>
@@ -168,18 +170,153 @@
         </div>
     </nav>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="motorcycle-carousel" class="carousel slide" data-bs-interval="false">
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item active first-slide">
                 <img src="https://www.royalenfield.com/content/dam/royal-enfield/super-meteor-650/motorcycles/home/motorcycle/desktop/super-meteor-650.jpg"
+                    class="d-block w-100" alt="...">
+                <img class="first-slide-text-image"
+                    src="https://www.royalenfield.com/content/dam/royal-enfield/super-meteor-650/motorcycles/home/motorcycle/super-meteor-logo.png">
+                <button class="btn btn-danger">Explore ></button>
+            </div>
+            <div class="carousel-item second-slide">
+                <img src="https://www.royalenfield.com/content/dam/royal-enfield/hunter-350/home/motorcycle/hunter-350-motorcycle-home.jpg"
+                    class="d-block w-100" alt="...">
+                <button class="btn btn-outline-light">Explore ></button>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.royalenfield.com/content/dam/royal-enfield/india/motorcycles/scram/home/desktop/scram-411.png"
                     class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://www.royalenfield.com/content/dam/royal-enfield/hunter-350/home/motorcycle/hunter-350-motorcycle-home.jpg"
+                <img src="https://www.royalenfield.com/content/dam/royal-enfield/india/motorcycles/classic-350/motorcycle/classic-350-motorcycle-section.png"
                     class="d-block w-100" alt="...">
             </div>
         </div>
     </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark rides-navbar sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Rides</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" type="button" data-bs-target="#rides-carousel" data-bs-slide-to="0"
+                            aria-current="true" aria-label="Slide 1">RiderMania 2022</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" type="button" data-bs-target="#rides-carousel" data-bs-slide-to="1"
+                            aria-label="Slide 2">RE:Mapped</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="rides-carousel" class="carousel slide" data-bs-interval="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active first-slide">
+                <img src="https://www.royalenfield.com/content/dam/royal-enfield/india/home/banner/desktop/moto-verse-new.png"
+                    class="d-block w-100" alt="...">
+                <div class="first-slide-text">RiderMania 2022</div>
+                <button class="btn btn-danger">Watch the Film ></button>
+            </div>
+            <div class="carousel-item second-slide">
+                <img src="https://www.royalenfield.com/content/dam/royal-enfield/india/home/banner/desktop/explore-guide.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+
+    <section class="text-center bg-dark text-white py-3 fw-bold fs-5">
+        Popular Tags
+    </section>
+
+    <section class="grid-carousel">
+        <div class="row p-0 m-0">
+            <div class="col-3 m-0 p-0">
+                <div id="grid-first-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167543462714217971897199028517_1.jpg');">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102359817988175453663384_3.jpg')">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102186418005033476490776_1.jpg');">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102271218030337648430933_1.jpg');">
+                        </div>
+                    </div>
+                    <div class="grid-carousel-subtitle">#PureCruising</div>
+                </div>
+            </div>
+            <div class="col-3 m-0 p-0">
+                <div id="grid-second-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167543462714217971897199028517_1.jpg');">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102359817988175453663384_3.jpg')">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102186418005033476490776_1.jpg');">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102271218030337648430933_1.jpg');">
+                        </div>
+                    </div>
+                    <div class="grid-carousel-subtitle">#RiderMania2022</div>
+                </div>
+            </div>
+            <div class="col-3 m-0 p-0">
+                <div id="grid-third-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167543462714217971897199028517_1.jpg');">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102359817988175453663384_3.jpg')">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102186418005033476490776_1.jpg');">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102271218030337648430933_1.jpg');">
+                        </div>
+                    </div>
+                    <div class="grid-carousel-subtitle">#Classic350</div>
+                </div>
+            </div>
+            <div class="col-3 m-0 p-0">
+                <div id="grid-fourth-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167543462714217971897199028517_1.jpg');">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102359817988175453663384_3.jpg')">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102186418005033476490776_1.jpg');">
+                        </div>
+                        <div class="carousel-item"
+                            style="background-image: url('https://www.royalenfield.com/node/assets/locobuzz/167120102271218030337648430933_1.jpg');">
+                        </div>
+                    </div>
+                    <div class="grid-carousel-subtitle">#VibeHunter</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- icons -->

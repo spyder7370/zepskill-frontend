@@ -117,3 +117,101 @@ body {
 }
 
 /*! MOTORCYCLE NAVBAR */
+
+/* *MOTORCYLE CAROUSEL */
+#motorcycle-carousel .carousel-item.first-slide {
+    position: relative;
+}
+
+#motorcycle-carousel .carousel-item.first-slide .btn-danger {
+    position: absolute;
+    top: 50%;
+    right: 21rem;
+}
+
+#motorcycle-carousel .carousel-item.first-slide .first-slide-text-image {
+    position: absolute;
+    top: 30%;
+    right: 10rem;
+    width: 17rem;
+}
+
+#motorcycle-carousel .carousel-item.second-slide .btn-outline-light {
+    position: absolute;
+    top: 50%;
+    left: 6rem;
+}
+
+/*! MOTORCYCLE CAROUSEL */
+
+/* * RIDES NAVBAR */
+
+.navbar.rides-navbar {
+    background-color: black;
+}
+
+.navbar.rides-navbar .navbar-brand {
+    font-weight: bold;
+}
+
+.rides-navbar .nav-item {
+    border-right: 3px solid white;
+    line-height: 1px;
+    padding: 0 1rem;
+}
+
+.rides-navbar .nav-item:last-child {
+    border-right: none;
+}
+
+/* ! RIDES NAVBAR */
+
+/* * RIDES CAROUSEL */
+#rides-carousel .first-slide {
+    position: relative;
+}
+
+#rides-carousel .first-slide .first-slide-text {
+    position: absolute;
+    top: 40%;
+    right: 12rem;
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#rides-carousel .first-slide .btn-danger {
+    position: absolute;
+    top: 50%;
+    right: 15rem;
+}
+
+/* ! RIDES CAROUSEL */
+
+/* * GRID CAROUSEL */
+.grid-carousel .carousel-item {
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.grid-carousel .carousel {
+    position: relative;
+}
+
+.grid-carousel .grid-carousel-subtitle {
+    position: absolute;
+    top: 45%;
+    right: 30%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    z-index: 5;
+}
+
+.grid-carousel .grid-carousel-subtitle:hover {
+    color: red;
+}
+
+/* ! GRID CAROUSEL */
