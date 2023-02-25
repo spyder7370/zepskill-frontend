@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.square {
+    width: 10rem;
+    height: 10rem;
+    background-color: rgb(255, 105, 105);
+    margin-top: 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 1.5rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container {
+    width: 35%;
+    margin: auto;
+}
+
+main {
+    color: white;
+    background-color: steelblue;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 2rem;
+}
+
+main div:nth-child(2) {
+    font-size: 3rem;
+}
+
+nav {
+    background-color: white;
+    color: steelblue;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav span {
+    display: inline-block;
+    margin: 0 0.7rem;
+    padding: 0.3rem 0.2rem;
+}
+
+.selected {
+    color: white;
+    background-color: steelblue;
+}
+
+nav .container div:first-child {
+    padding: 0.3rem 0.2rem;
+}
