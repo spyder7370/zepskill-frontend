@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3784&q=80"
+                class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Ping Pong Score Keeper</h5>
+                <h1 class="card-text">
+                    <span class="p1-text">0</span>
+                    to
+                    <span class="p2-text">0</span>
+                </h1>
+                <p class="card-text">Use the buttons below to keep score</p>
+                <div class="row mb-3">
+                    <div class="col-3">
+                        <label for="round-select">Playing To:</label>
+                    </div>
+                    <div class="col-9">
+                        <select class="form-select" name="" id="round-select">
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-4 p-0">
+                            <div class="d-grid">
+                                <button class="btn btn-success p1-btn">+1 Player One</button>
+                            </div>
+                        </div>
+                        <div class="col-4 p-0">
+                            <div class="d-grid">
+                                <button class="btn btn-primary p2-btn">+1 Player Two</button>
+                            </div>
+                        </div>
+                        <div class="col-4 p-0">
+                            <div class="d-grid">
+                                <button class="btn btn-danger reset-btn">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+.container {
+    width: 40%;
+}
+
+select {
+    display: block;
+}
+
+.card {
+    margin: 2rem 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card-title {
+    font-weight: bold;
+}
