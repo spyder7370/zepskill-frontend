@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(0, 212, 255);
+    background: linear-gradient(90deg, rgba(0, 212, 255, 1) 25%, rgba(248, 224, 148, 1) 90%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 20%;
+    margin: 4rem auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: steelblue;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+input {
+    background-color: #F2F2F2;
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    /* * */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 0.5rem 1rem;
+}
+
+li:nth-child(even) {
+    background-color: #F2F2F2;
+}
+
+li:nth-child(odd) {
+    background-color: white;
+}
+
+.submitBtn:hover {
+    cursor: pointer;
+}
+
+.crossed {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.invisible {
+    display: none;
+}
+
+li:hover {
+    cursor: pointer;
+}
