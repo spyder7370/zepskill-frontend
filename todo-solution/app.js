@@ -11,7 +11,10 @@ submitBtn.addEventListener('click', () => {
             3. add that newly made LI into your list
         */
 		let newLi = document.createElement('li');
-		newLi.textContent = formValue;
+		newLi.textContent = formValue + ' ';
+		let newSpan = document.createElement('span');
+		newSpan.textContent = 'X';
+		newLi.appendChild(newSpan);
 		list.appendChild(newLi);
 		// * form reset
 		input.value = '';
@@ -26,6 +29,9 @@ document.addEventListener('click', (event) => {
 	if (event.target.tagName === 'LI') {
 		let clickedLi = event.target;
 		clickedLi.classList.toggle('crossed');
+	} else if (event.target.tagName === 'SPAN') {
+		let clickedSpan = event.target;
+		clickedSpan.parentNode.classList.add('invisible');
 	}
 });
 
