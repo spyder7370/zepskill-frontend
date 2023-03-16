@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>show page for item: <%=foundProduct.name%></h1>
+    <div>price: <%=foundProduct.price%></div>
+    <div>seller name: <%=foundProduct.seller%></div>
+    <div>is available: <%=foundProduct.inStock%></div>
+    <form action="/products/<%= foundProduct._id %>?_method=DELETE" method="post">
+        <input type="submit" value="delete me">
+    </form>
+</body>
+
+</html>
