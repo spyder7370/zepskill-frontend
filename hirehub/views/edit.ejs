@@ -1,32 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./partials/header.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<div class="row">
+    <div class="col-6 m-auto">
+        <h1>Edit form for <%= job.name %></h1>
+        <form action="/jobs/<%= job._id %>?_method=PATCH" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Company Name</label>
+                <input value="<%= job.name %>" type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Company Location</label>
+                <input value="<%=job.address%>" type="text" class="form-control" id="address" name="address">
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Company Logo</label>
+                <input value="<%= job.image %>" type="text" class="form-control" id="image" name="image">
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Edit job">
+            </div>
+        </form>
+    </div>
+</div>
 
-<body>
-    <h1>edit form to edit job <%= job.name %></h1>
-    <form action="/jobs/<%= job._id %>?_method=PATCH" method="post">
-        <div>
-            <label for="name">Enter job name</label>
-            <input type="text" name="name" id="name">
-        </div>
-        <div>
-            <label for="address">Enter job location</label>
-            <input type="text" name="address" id="address">
-        </div>
-        <div>
-            <label for="image">Enter company logo</label>
-            <input type="text" name="image" id="image">
-        </div>
-        <div>
-            <input type="submit" value="edit job">
-        </div>
-    </form>
-</body>
-
-</html>
+<%- include('./partials/footer.ejs') %>
