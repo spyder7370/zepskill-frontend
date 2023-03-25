@@ -4,6 +4,15 @@ let router = express.Router();
 let Job = require('../models/job-DB.js');
 let Notification = require('../models/notif-DB');
 
+const isLoggedIn = function(req, res, next) {
+	if (req.isAuthenticated()) {
+		next();
+	} else {
+		console.log('you are not logged in');
+		res.redirect('/login');
+	}
+};
+
 router.get('/', function(req, res) {
 	res.render('landing');
 });
@@ -20,7 +29,7 @@ router.get('/jobs', async function(req, res) {
 });
 
 // new
-router.get('/jobs/new', async function(req, res) {
+router.get('/jobs/new', isLoggedIn, function(req, res) {
 	res.render('new');
 });
 
