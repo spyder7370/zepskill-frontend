@@ -1,0 +1,20 @@
+<%- include('./partials/header.ejs') %>
+<div class="row">
+    <div class="col-6 m-auto">
+        <h1>New form to post a notification</h1>
+        <form action="/notifications" method="post">
+            <div class="mb-3">
+                <label for="body" class="form-label">notification body</label>
+                <input type="text" class="form-control" id="body" name="body">
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">author</label>
+                <input type="text" class="form-control" id="author" name="author">
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Add a new notification">
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('./partials/footer.ejs') %>

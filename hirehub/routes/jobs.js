@@ -1,8 +1,8 @@
 let express = require('express');
 let router = express.Router();
-let mongoose = require('mongoose');
 // model
 let Job = require('../models/job-DB.js');
+let Notification = require('../models/notif-DB');
 
 router.get('/', function(req, res) {
 	res.render('landing');
@@ -31,9 +31,19 @@ router.post('/jobs', async function(req, res) {
 		let newJob = new Job({
 			name: req.body.name,
 			address: req.body.address,
-			image: req.body.image
+			image: req.body.image,
+			package: req.body.package,
+			cgpa: req.body.cgpa,
+			deadline: req.body.deadline,
+			type: req.body.type
 		});
 		await newJob.save();
+		//! push a new notificatoin
+		let newNotif = new Notification({
+			body: 'A new job has been posted',
+			author: newJob.name
+		});
+		await newNotif.save();
 		res.redirect('/jobs');
 	} catch (error) {
 		console.log('error while adding a new job', error);
@@ -45,7 +55,6 @@ router.get('/jobs/:id', async function(req, res) {
 	try {
 		// fetch the required job by using id
 		let id = req.params.id;
-		let check = mongoose.Types.ObjectId.isValid(id);
 		let job = await Job.findById(id);
 		// eval(require('locus'));
 		// findOne
@@ -76,9 +85,19 @@ router.patch('/jobs/:id', async function(req, res) {
 		let updatedJob = {
 			name: req.body.name,
 			address: req.body.address,
-			image: req.body.image
+			image: req.body.image,
+			package: req.body.package,
+			cgpa: req.body.cgpa,
+			deadline: req.body.deadline,
+			type: req.body.type
 		};
 		await Job.findByIdAndUpdate(id, updatedJob);
+		//! push a new notificatoin
+		let newNotif = new Notification({
+			body: 'A job has been updated',
+			author: updatedJob.name
+		});
+		await newNotif.save();
 		// findOneAndUpdate
 		res.redirect(`/jobs/${id}`);
 	} catch (error) {

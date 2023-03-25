@@ -7,6 +7,10 @@
         <img class="img-fluid" src="<%= job.image %>" alt="">
     </div>
 </div>
+<div><%= job.type %></div>
+<div><%= job.cgpa %></div>
+<div><%= job.deadline %></div>
+<div><%= job.package %></div>
 <a class="btn btn-warning" href="/jobs/<%= job._id %>/edit">edit</a>
 <form action="/jobs/<%= job._id %>?_method=DELETE" method="post">
     <input class="btn btn-danger" type="submit" value="delete">

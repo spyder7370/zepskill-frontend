@@ -17,8 +17,10 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 // import router
-let jobRoutes = require('./routes/index.js');
+let jobRoutes = require('./routes/jobs.js');
+let notifRoutes = require('./routes/notifications');
 app.use(jobRoutes);
+app.use(notifRoutes);
 
 app.listen(3000, function() {
 	console.log('server started on port 3000');

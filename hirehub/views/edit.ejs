@@ -16,6 +16,23 @@
                 <label for="image" class="form-label">Company Logo</label>
                 <input value="<%= job.image %>" type="text" class="form-control" id="image" name="image">
             </div>
+            <div class="mb-3">
+                <label for="package" class="form-label">Job Stipend</label>
+                <input value="<%= job.package %>" type="text" class="form-control" id="package" name="package">
+            </div>
+            <div class="mb-3">
+                <label for="cgpa" class="form-label">CGPA</label>
+                <input value="<%= job.cgpa %>" type="number" class="form-control" id="cgpa" name="cgpa" min="0" max="10"
+                    step="0.01">
+            </div>
+            <div class="mb-3">
+                <label for="deadline" class="form-label">Job deadline</label>
+                <input value="<%= job.deadline %>" type="date" class="form-control" id="deadline" name="deadline">
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Job Type</label>
+                <input value="<%= job.type %>" type="text" class="form-control" id="type" name="type">
+            </div>
             <div>
                 <input class="btn btn-primary" type="submit" value="Edit job">
             </div>
