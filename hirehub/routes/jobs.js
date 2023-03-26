@@ -22,6 +22,7 @@ router.get('/jobs', async function(req, res) {
 	try {
 		// extract all the jobs from db
 		let foundJobs = await Job.find({});
+		console.log(req.user);
 		res.render('index', { foundJobs });
 	} catch (error) {
 		console.log('error while extracting all jobs', error);

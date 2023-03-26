@@ -14,8 +14,6 @@ router.post('/register', async function(req, res) {
 	});
 	// hashing and salting and saving
 	let registeredUser = await User.register(user, req.body.password);
-	// eval(require('locus'));
-	console.log(registeredUser);
 	// saved user is not logged in
 	// cookie will automatically generate
 	req.login(registeredUser, function(err) {
