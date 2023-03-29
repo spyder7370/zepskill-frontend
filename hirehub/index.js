@@ -41,6 +41,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(function(req, res, next) {
+	res.locals.currentUser = req.user;
+	next();
+});
 // import router
 let jobRoutes = require('./routes/jobs.js');
 let notifRoutes = require('./routes/notifications');

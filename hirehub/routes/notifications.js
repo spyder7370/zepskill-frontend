@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let Notification = require('../models/notif-DB');
-
+let { isLoggedIn, isAdmin } = require('../middlewares/index');
 // index
 router.get('/notifications', async function(req, res) {
 	try {
@@ -29,9 +29,9 @@ router.post('/notifications', async function(req, res) {
 	}
 });
 // delete
-router.delete('/notifications/:id', async function(req, res) {
+router.delete('/notifications/:id', isLoggedIn, isAdmin, async function(req, res) {
 	try {
-		Notification.findByIdAndDelete(req.params.id);
+		await Notification.findByIdAndDelete(req.params.id);
 		res.redirect('/notifications');
 	} catch (error) {
 		console.log('error while deleting notif', error);

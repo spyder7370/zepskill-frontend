@@ -1,5 +1,9 @@
 <%- include('./partials/header.ejs') %>
 <link rel="stylesheet" href="style.css">
+<form action="/jobs" method="get">
+    <input type="text" name="search">
+    <input type="submit" value="search">
+</form>
 <h1>List of all jobs</h1>
 <a class="btn btn-danger" href="/jobs/new">Add a new job</a>
 <% for(let job of foundJobs){ %>
