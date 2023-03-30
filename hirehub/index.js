@@ -49,9 +49,11 @@ app.use(function(req, res, next) {
 let jobRoutes = require('./routes/jobs.js');
 let notifRoutes = require('./routes/notifications');
 let authRoutes = require('./routes/auth');
+let userRoutes = require('./routes/user');
 app.use(jobRoutes);
 app.use(notifRoutes);
 app.use(authRoutes);
+app.use(userRoutes);
 
 app.listen(3000, function() {
 	console.log('server started on port 3000');

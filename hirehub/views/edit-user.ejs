@@ -1,0 +1,23 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="row">
+    <div class="col-6 m-auto">
+        <h1>Edit form for <%= user.name %></h1>
+        <form action="/users/<%= user._id %>?_method=PATCH" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input value="<%= user.name %>" type="text" class="form-control" id="name" name="user[name]">
+            </div>
+            <div class="mb-3">
+                <label for="cgpa" class="form-label">Cgpa</label>
+                <input value="<%= user.cgpa %>" type="number" class="form-control" id="cgpa" name="user[cgpa]" min="0"
+                    max="10" step="0.01">
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Edit user">
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

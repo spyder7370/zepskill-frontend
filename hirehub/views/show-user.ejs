@@ -1,0 +1,11 @@
+<%- include('./partials/header.ejs') %>
+<h1>show page for <%= user.username %></h1>
+<div>admin: <%= user.isAdmin %></div>
+<div>cgpa: <%= user.cgpa %></div>
+<div>name: <%= user.name %></div>
+<div>selected: <%= user.selected %></div>
+<a class="btn btn-warning" href="/users/<%= user._id %>/edit">edit</a>
+<form action="/users/<%= user._id %>?_method=DELETE" method="post">
+    <input class="btn btn-danger" type="submit" value="delete">
+</form>
+<%- include('./partials/footer.ejs') %>
