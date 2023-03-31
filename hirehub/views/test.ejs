@@ -1,0 +1,43 @@
+<%- include('./partials/header.ejs') %>
+
+
+<div class="row">
+    <div class="col-6 m-auto">
+        <h1>test for job: <%= job.name %></h1>
+        <form action="/jobs/<%= job._id %>/test" method="post">
+            <% for(let i in job.questions) { %>
+            <div><%= job.questions[i].description %></div>
+            <div class="form-check">
+                <input required class="form-check-input" type="radio" name="answers[<%= i %>]" id="option1"
+                    value="option1">
+                <label class="form-check-label" for="option1">
+                    <%= job.questions[i].option1 %>
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answers[<%= i %>]" id="option2" value="option2">
+                <label class="form-check-label" for="option2">
+                    <%= job.questions[i].option2 %>
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answers[<%= i %>]" id="option3" value="option3">
+                <label class="form-check-label" for="option3">
+                    <%= job.questions[i].option3 %>
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answers[<%= i %>]" id="option4" value="option4">
+                <label class="form-check-label" for="option4">
+                    <%= job.questions[i].option4 %>
+                </label>
+            </div>
+            <% } %>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Add a new job">
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

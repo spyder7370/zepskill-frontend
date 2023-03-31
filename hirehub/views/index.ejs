@@ -1,13 +1,15 @@
 <%- include('./partials/header.ejs') %>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.css">
 <form action="/jobs" method="get">
     <input type="text" name="search">
     <input type="submit" value="search">
 </form>
 <h1>List of all jobs</h1>
 <a class="btn btn-danger" href="/jobs/new">Add a new job</a>
-<% for(let job of foundJobs){ %>
-<div><%= job.name %> <a class="btn btn-success" href="/jobs/<%= job._id %>">Read More</a></div>
-<% } %>
+<div class="row">
+    <% for(let job of foundJobs){ %>
+    <div class="col-4"><%= job.name %> <a class="btn btn-success" href="/jobs/<%= job._id %>">Read More</a></div>
+    <% } %>
+</div>
 
 <%- include('./partials/footer.ejs') %>

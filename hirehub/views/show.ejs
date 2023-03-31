@@ -9,7 +9,8 @@
 </div>
 <div><%= job.type %></div>
 <div><%= job.cgpa %></div>
-<div><%= job.deadline %></div>
+<div><%= job.deadline.toDateString() %></div>
+<div><%= moment(job.createdAt).fromNow() %></div>
 <div><%= job.package %></div>
 <a href="/jobs/<%= job._id %>/apply" class="btn btn-info">apply</a>
 <% if (currentUser && currentUser.isAdmin) { %>

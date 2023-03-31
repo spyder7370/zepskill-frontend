@@ -1,0 +1,36 @@
+<%- include('./partials/header.ejs') %>
+<div class="row">
+    <div class="col-6 m-auto">
+        <h1>New form to post a question</h1>
+        <form action="/jobs/<%= jobId %>/questions" method="post">
+            <div class="mb-3">
+                <label for="body" class="form-label">description</label>
+                <input required type="text" class="form-control" id="body" name="question[description]">
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">option 1</label>
+                <input required type="text" class="form-control" id="author" name="question[option1]">
+            </div>
+            <div class="mb-3">
+                <label for="option2" class="form-label">option 2</label>
+                <input required type="text" class="form-control" id="option2" name="question[option2]">
+            </div>
+            <div class="mb-3">
+                <label for="option3" class="form-label">option 3</label>
+                <input required type="text" class="form-control" id="option3" name="question[option3]">
+            </div>
+            <div class="mb-3">
+                <label for="option4" class="form-label">option 4</label>
+                <input required type="text" class="form-control" id="option4" name="question[option4]">
+            </div>
+            <div class="mb-3">
+                <label for="correctOption" class="form-label">correct option</label>
+                <input required type="text" class="form-control" id="correctOption" name="question[correctOption]">
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Add a new question">
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('./partials/footer.ejs') %>
