@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs') %>
+<div class="row">
+    <div class="col-3 mx-auto my-5">
+        LOGIN
+        <form class="my-3 needs-validation" action="/login" method="post" novalidate>
+            <div class="form-floating mb-3">
+                <input name="username" type="email" class="form-control" id="email" placeholder="name@example.com"
+                    required>
+                <label for="email">Email address</label>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please choose a valid email.
+                </div>
+            </div>
+            <div class="form-floating">
+                <input name="password" type="password" class="form-control" id="password" placeholder="Password"
+                    required>
+                <label for="password">Password</label>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter a password.
+                </div>
+            </div>
+            <input class=" mt-3 btn btn-primary" type="submit" value="login">
+        </form>
+    </div>
+</div>
+<script src="/scripts/form-validation.js"></script>
+<%- include('../partials/footer.ejs') %>
