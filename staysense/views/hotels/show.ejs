@@ -1,0 +1,51 @@
+<%- include('../partials/header.ejs') %>
+<div><%= hotel.name %></div>
+<div><%= hotel.address %></div>
+<div><%= hotel.price %></div>
+<div><%= hotel.isRoomAvailable %></div>
+<div><a href="/users/<%= hotel.author._id %>"><%= hotel.author.username %></a></div>
+<div><%= hotel.createdAt.toDateString() %></div>
+<img src="<%= hotel.image %>" alt="">
+<div><a class="btn btn-info" href="/hotels/<%= hotel._id %>/edit">edit</a></div>
+<form action="/hotels/<%= hotel._id %>?_method=DELETE" method="post">
+    <input class="btn btn-danger" type="submit" value="delete">
+</form>
+<div class="row">
+    <div class="col-3">
+        <form class="mt-5 needs-validation" action="/hotels/<%= hotel._id %>/reviews" method="post" novalidate>
+            <div class="form-floating mb-3">
+                <input name="review[rating]" type="number" class="form-control" id="price" placeholder="review rating"
+                    min="1" max="5" step="1" required>
+                <label for="price">Hotel Review Rating</label>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter a rating between 1 and 5.
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input name="review[body]" type="text" class="form-control" id="price" placeholder="review body"
+                    required>
+                <label for="price">Hotel Review Body</label>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter some text.
+                </div>
+            </div>
+            <input class=" mt-2 btn btn-primary" type="submit" value="add review">
+        </form>
+        <h1>all reviews</h1>
+        <% for(let review of hotel.reviews) { %>
+        <div><%= review.body %> - <%= review.rating %> - <%= review.author.name %></div>
+        <form action="/hotels/<%= hotel._id %>/reviews/<%= review._id %>?_method=DELETE" method="post">
+            <input type="submit" class="btn btn-sm btn-danger" value="delete">
+        </form>
+        <% } %>
+    </div>
+</div>
+<script src="/scripts/form-validation.js"></script>
+<!-- overall rating : total sum of ratings / no of ratings -->
+<%- include('../partials/footer.ejs') %>

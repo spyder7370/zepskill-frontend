@@ -1,12 +1,12 @@
 <%- include('../partials/header.ejs') %>
 <div class="row">
     <div class="col-3 mx-auto my-5">
-        Edit A HOTEL
-        <form class="my-3 needs-validation" action="/hotels/<%= hotel._id %>?_method=PATCH" method="post" novalidate>
+        Edit a user
+        <form class="my-3 needs-validation" action="/users/<%= user._id %>?_method=PATCH" method="post" novalidate>
             <div class="form-floating mb-3">
-                <input value="<%= hotel.name %>" name="hotel[name]" type="text" class="form-control" id="name"
+                <input value="<%= user.name %>" name="user[name]" type="text" class="form-control" id="name"
                     placeholder="Hotel Name" required>
-                <label for="name">Hotel Name</label>
+                <label for="name">User's Full Name</label>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -15,9 +15,9 @@
                 </div>
             </div>
             <div class="form-floating mb-3">
-                <input value="<%= hotel.address %>" name="hotel[address]" type="text" class="form-control" id="address"
+                <input value="<%= user.image %>" name="user[image]" type="text" class="form-control" id="address"
                     placeholder="Hotel Address" required>
-                <label for="address">Hotel Address</label>
+                <label for="address">User Image</label>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -26,25 +26,14 @@
                 </div>
             </div>
             <div class="form-floating mb-3">
-                <input value="<%= hotel.price %>" name="hotel[price]" type="number" class="form-control" id="price"
-                    placeholder="Hotel Price" min="100" max="10000" step="1" required>
-                <label for="price">Hotel Price</label>
+                <input value="<%= user.username %>" name="user[username]" type="text" class="form-control" id="price"
+                    placeholder="Hotel Price" required disabled>
+                <label for="price">User's Username</label>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
                 <div class="invalid-feedback">
                     Please enter price.
-                </div>
-            </div>
-            <div class="form-floating mb-3">
-                <input value="<%= hotel.image %>" name="hotel[image]" type="text" class="form-control" id="image"
-                    placeholder="Hotel Image" required>
-                <label for="image">Hotel Image</label>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-                <div class="invalid-feedback">
-                    Please enter a valid image address.
                 </div>
             </div>
             <input class=" mt-3 btn btn-primary" type="submit" value="edit">

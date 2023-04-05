@@ -31,6 +31,10 @@ const hotelSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'user'
 	},
+	overAllRating: {
+		type: Number,
+		default: 0
+	},
 	reviews: [
 		{
 			type: mongoose.Schema.Types.ObjectId,

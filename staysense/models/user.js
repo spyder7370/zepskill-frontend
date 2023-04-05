@@ -10,6 +10,11 @@ const userSchema = new mongoose.Schema({
 	},
 	image: {
 		type: String
+	},
+	name: {
+		type: String,
+		default: 'not given',
+		trim: true
 	}
 });
 

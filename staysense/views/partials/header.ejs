@@ -41,7 +41,8 @@
                     </li>
                     <% } else { %>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">currently logged in as : <%= currentUser.username %></a>
+                        <a class="nav-link" href="/users/<%= currentUser._id %>">currently logged in as :
+                            <%= currentUser.name %></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Logout</a>

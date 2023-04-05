@@ -5,6 +5,7 @@ const express = require('express'),
 	passport = require('passport'),
 	localStrategy = require('passport-local'),
 	session = require('express-session'),
+	methodOverride = require('method-override'),
 	path = require('path');
 const app = express();
 require('dotenv').config();
@@ -51,6 +52,7 @@ app.use(flash());
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 app.use((req, res, next) => {
 	res.locals.currentUser = req.user;
 	res.locals.success = req.flash('success');
@@ -60,9 +62,13 @@ app.use((req, res, next) => {
 
 // ! APIs
 const authRoutes = require('./routes/auth'),
-	hotelRoutes = require('./routes/hotel');
+	hotelRoutes = require('./routes/hotels'),
+	userRoutes = require('./routes/users');
+reviewRoutes = require('./routes/reviews');
 app.use(authRoutes);
 app.use(hotelRoutes);
+app.use(userRoutes);
+app.use(reviewRoutes);
 
 // ! PORT CONNECTION
 const PORT = process.env.PORT;

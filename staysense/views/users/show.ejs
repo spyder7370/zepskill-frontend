@@ -1,0 +1,6 @@
+<%- include('../partials/header.ejs') %>
+<div><%= user.name %></div>
+<div><%= user.username %></div>
+<img src="<%= user.image %>" alt="">
+<div><a class="btn btn-info" href="/users/<%= user._id %>/edit">edit</a></div>
+<%- include('../partials/footer.ejs') %>
