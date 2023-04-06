@@ -1,5 +1,5 @@
 const express = require('express'),
-	{ isLoggedIn } = require('../middlewares/index');
+	{ isLoggedIn, isReviewAuthor } = require('../middlewares/index');
 const router = express.Router();
 const Hotel = require('../models/hotel'),
 	Review = require('../models/review');
@@ -28,7 +28,7 @@ router.post('/hotels/:id/reviews', isLoggedIn, async (req, res) => {
 	}
 });
 // delete
-router.delete('/hotels/:id/reviews/:reviewId', isLoggedIn, async (req, res) => {
+router.delete('/hotels/:id/reviews/:reviewId', isLoggedIn, isReviewAuthor, async (req, res) => {
 	try {
 		await Review.findByIdAndDelete(req.params.reviewId);
 		req.flash('success', 'comment deleted');

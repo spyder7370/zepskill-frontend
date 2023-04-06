@@ -41,7 +41,10 @@ router.post(
 	}),
 	(req, res) => {
 		req.flash('success', 'welcome back user');
-		res.redirect('/hotels');
+		console.log(req.session, req.session.returnTo);
+		let redirectUrl = req.session.returnTo || '/hotels';
+		// delete req.session.returnTo;
+		res.redirect(redirectUrl);
 	}
 );
 

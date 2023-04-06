@@ -5,11 +5,35 @@
 <div><%= hotel.isRoomAvailable %></div>
 <div><a href="/users/<%= hotel.author._id %>"><%= hotel.author.username %></a></div>
 <div><%= hotel.createdAt.toDateString() %></div>
-<img src="<%= hotel.image %>" alt="">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <% for(let i in hotel.images){ %>
+        <% if (i == 0) { %>
+        <div class="carousel-item active">
+            <img src="<%= hotel.images[i].url %>" class="img-fluid d-block w-100" alt="...">
+        </div>
+        <% } else { %>
+        <div class="carousel-item">
+            <img src="<%= hotel.images[i].url %>" class="img-fluid d-block w-100" alt="...">
+        </div>
+        <% } %>
+        <% } %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<% if (currentUser && hotel.author._id.equals(currentUser._id)) { %>
 <div><a class="btn btn-info" href="/hotels/<%= hotel._id %>/edit">edit</a></div>
 <form action="/hotels/<%= hotel._id %>?_method=DELETE" method="post">
     <input class="btn btn-danger" type="submit" value="delete">
 </form>
+<% } %>
 <div class="row">
     <div class="col-3">
         <form class="mt-5 needs-validation" action="/hotels/<%= hotel._id %>/reviews" method="post" novalidate>
@@ -40,9 +64,11 @@
         <h1>all reviews</h1>
         <% for(let review of hotel.reviews) { %>
         <div><%= review.body %> - <%= review.rating %> - <%= review.author.name %></div>
+        <% if (currentUser && review.author._id.equals(currentUser._id)) { %>
         <form action="/hotels/<%= hotel._id %>/reviews/<%= review._id %>?_method=DELETE" method="post">
             <input type="submit" class="btn btn-sm btn-danger" value="delete">
         </form>
+        <% } %>
         <% } %>
     </div>
 </div>
