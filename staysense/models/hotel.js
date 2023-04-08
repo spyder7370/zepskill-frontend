@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const mongoosePaginate = require('mongoose-paginate-v2');
 const hotelSchema = new mongoose.Schema({
 	name: {
 		type: String,
@@ -42,8 +42,33 @@ const hotelSchema = new mongoose.Schema({
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'review'
 		}
+	],
+	geometry: {
+		type: {
+			type: String,
+			enum: [ 'Point' ],
+			required: true
+		},
+		coordinates: {
+			type: [ Number ],
+			required: true
+		}
+	},
+	upvotes: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'user'
+		}
+	],
+	downvotes: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'user'
+		}
 	]
 });
-
+hotelSchema.plugin(mongoosePaginate);
 const Hotel = mongoose.model('hotel', hotelSchema);
 module.exports = Hotel;
+// a -> n ratings
+// new element 'i' => new average =>

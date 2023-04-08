@@ -7,8 +7,6 @@ module.exports.isLoggedIn = async (req, res, next) => {
 	} else {
 		console.log(req.originalUrl);
 		req.session.returnTo = req.originalUrl;
-		await req.session.save();
-		console.log(req.session);
 		req.flash('error', 'please sign in');
 		res.redirect('/login');
 	}

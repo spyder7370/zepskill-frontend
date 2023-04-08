@@ -1,8 +1,21 @@
 <%- include('../partials/header.ejs') %>
 <link rel="stylesheet" href="/stylesheets/main.css">
+<%- include('../partials/paginate.ejs') %>
+<div class="row">
+    <div class="col-4">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Search Hotel" aria-label="Username"
+                aria-describedby="basic-addon1" id="searchInput" onkeyup="searchHotel()">
+        </div>
+    </div>
+</div>
 <h1>list of all hotels</h1>
-<% for(let hotel of hotels) { %>
-<div><%= hotel.name %></div>
-<a class="btn btn-primary" href="/hotels/<%= hotel._id %>">Read more</a>
+<% for(let hotel of hotels.docs) { %>
+<div class="hotel-card">
+    <div class="hotel-name"><%= hotel.name %></div>
+    <a class="btn btn-primary" href="/hotels/<%= hotel._id %>">Read more</a>
+</div>
 <% } %>
+<script src="/scripts/app.js"></script>
 <%- include('../partials/footer.ejs') %>

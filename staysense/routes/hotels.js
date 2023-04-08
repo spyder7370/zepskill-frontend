@@ -8,13 +8,24 @@ const multer = require('multer');
 const { storage } = require('../cloudinary/cloud_config');
 const upload = multer({ storage });
 
+// ! mapbox
+const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
+const geoCoder = mbxGeocoding({ accessToken: process.env.MAPBOX_TOKEN });
+
 router.get('/', (req, res) => {
 	res.render('landing');
 });
 
 router.get('/hotels', async (req, res) => {
 	try {
-		let hotels = await Hotel.find({});
+		let options = {
+			page: req.query.page || 1,
+			limit: 5,
+			sort: {
+				_id: 'desc'
+			}
+		};
+		let hotels = await Hotel.paginate({}, options);
 		res.render('hotels/index', { hotels });
 	} catch (error) {
 		req.flash('error', 'error while fetching hotels, please try again later');
@@ -31,12 +42,24 @@ router.post('/hotels', isLoggedIn, upload.array('image'), async (req, res) => {
 	try {
 		let hotel = new Hotel(req.body.hotel);
 		hotel.author = req.user._id;
+
+		// * file upload using multer & cloudinary
 		for (let file of req.files) {
 			hotel.images.push({
 				url: file.path,
 				filename: file.filename
 			});
 		}
+		// * geocoding using mapbox
+		const geoData = await geoCoder
+			.forwardGeocode({
+				query: req.body.hotel.address,
+				limit: 1
+			})
+			.send();
+		// console.log(geoData.body.features[0].geometry.coordinates);
+		hotel.geometry = geoData.body.features[0].geometry;
+
 		await hotel.save();
 		req.flash('success', 'hotel created');
 		res.redirect(`/hotels/${hotel._id}`);
@@ -59,16 +82,8 @@ router.get('/hotels/:id', async (req, res) => {
 					path: 'author'
 				}
 			});
-		// first we populate hotel's author
-		// then we populate hotel's reviews
-		// then we populate review's author
-		/*
-			.populate('some-property'); // only first level
-			.populate({
-				path: 'some-property'
-			})
-		*/
-		res.render('hotels/show', { hotel });
+		let coordinates = hotel.geometry.coordinates;
+		res.render('hotels/show', { hotel, coordinates });
 	} catch (error) {
 		req.flash('error', 'error while fetching a hotel, please try again later');
 		console.log(error);
@@ -109,6 +124,59 @@ router.delete('/hotels/:id', isLoggedIn, isHotelAuthor, async (req, res) => {
 		req.flash('error', 'error while deleting a hotel, please try again later');
 		console.log(error);
 		res.redirect('/hotels');
+	}
+});
+
+router.get('/hotels/:id/upvote', isLoggedIn, async (req, res) => {
+	try {
+		// check if user has already liked - remove the like
+		const { id } = req.params;
+		const upvoteExists = await Hotel.findOne({
+			_id: id,
+			upvotes: { _id: req.user._id }
+		});
+		const downvoteExists = await Hotel.findOne({
+			_id: id,
+			downvotes: { _id: req.user._id }
+		});
+		if (upvoteExists) {
+			res.send('you have already liked');
+		} else if (downvoteExists) {
+			// toggle user from downvotes array to upvotes array
+			res.send('you have disliked');
+		} else {
+			res.send('adding like');
+		}
+	} catch (error) {}
+});
+router.get('/hotels/:id/downvote', isLoggedIn, async (req, res) => {});
+router.get('/seed', async (req, res) => {
+	try {
+		for (let i = 0; i < 50; i++) {
+			let hotel = new Hotel({
+				name: 'Hotel HighRise',
+				geometry: {
+					type: 'Point',
+					coordinates: [ 77.2090057, 28.6138954 ]
+				},
+				address: 'delhi',
+				price: 10000,
+				images: [
+					{
+						url:
+							'https://res.cloudinary.com/diabrsvd6/image/upload/v1680943889/StaySense/hhbi8z180wk5okktrmy6.jpg',
+						filename: 'StaySense/hhbi8z180wk5okktrmy6'
+					}
+				],
+				upvotes: [],
+				downvotes: []
+			});
+			hotel.author = req.user;
+			await hotel.save();
+		}
+		res.send('done');
+	} catch (error) {
+		console.log(error);
 	}
 });
 module.exports = router;

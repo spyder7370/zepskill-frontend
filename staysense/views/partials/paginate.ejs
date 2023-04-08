@@ -1,0 +1,20 @@
+<nav aria-label="..." class="my-4">
+    <ul class="pagination">
+        <li class="page-item <%= hotels.hasPrevPage ? '' : 'disabled' %>">
+            <a class="page-link" href="/hotels?page=<%= hotels.prevPage %>">Previous</a>
+        </li>
+        <li class="page-item active" aria-current="page">
+            <a class="page-link" href="/hotels?page=<%= hotels.page %>"><%= hotels.page %></a>
+        </li>
+        <% for( let i = hotels.page+1; i <= Math.min(hotels.totalPages, hotels.page+5); i++ ) { %>
+        <li class="page-item" aria-current="page">
+            <a class="page-link" href="/hotels?page=<%= i %>"><%= i %></a>
+        </li>
+        <% } %>
+        <li class="page-item <%= hotels.hasNextPage ? '' : 'disabled' %>">
+            <a class=" page-link" href="/hotels?page=<%= hotels.nextPage %>">Next</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- condition?true:false -->

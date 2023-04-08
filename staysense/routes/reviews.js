@@ -16,6 +16,7 @@ router.post('/hotels/:id/reviews', isLoggedIn, async (req, res) => {
 		await newReview.save();
 		// take that review and push that into the hotel
 		let hotel = await Hotel.findById(req.params.id);
+		hotel.overAllRating = ((hotel.overAllRating*hotel.reviews.length) + newReview.rating)/(hotel.reviews.length+1);
 		hotel.reviews.push(newReview);
 		await hotel.save();
 		// redirect somewhere
