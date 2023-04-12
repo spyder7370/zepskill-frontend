@@ -48,15 +48,15 @@ router.post(
 );
 
 router.get('/logout', (req, res) => {
-	req.logout((err) => {
-		if (err) {
-			req.flash('error', 'something went wrong while logging out');
-			console.log(err);
-			return res.redirect('/hotels');
-		}
+	try {
+		req.logout();
 		req.flash('success', 'logout done');
 		res.redirect('/hotels');
-	});
+	} catch (error) {
+		req.flash('error', 'logout failed, please try again');
+		console.log(error);
+		res.redirect('back');
+	}
 });
 
 module.exports = router;
